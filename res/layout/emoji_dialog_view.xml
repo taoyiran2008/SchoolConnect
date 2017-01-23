@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/common_dialog_view_width"
+    android:layout_height="wrap_content"
+    android:background="@color/lightblue"
+    android:orientation="vertical"
+    android:padding="@dimen/common_dialog_view_padding" >
+
+    <GridView
+        android:id="@+id/gridview_emoji_dialog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:columnWidth="50dp"
+        android:gravity="center"
+        android:numColumns="8"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dp" >
+    </GridView>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="@drawable/popup_divider" />
+
+    <LinearLayout
+        android:layout_width="@dimen/common_dialog_view_width"
+        android:layout_height="58dip"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dip" />
+    </LinearLayout>
+
+</LinearLayout>

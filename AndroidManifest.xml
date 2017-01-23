@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tyr.ui"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
+
+    <permission android:name = "com.tyr.ui.permission.receive"/> 
+    
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" /> 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.tyr.ui.permission.receive"></uses-permission>
+    
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 
+        android:name="com.tyr.data.MyApplication">
+        <activity
+            android:name="com.tyr.activities.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tyr.activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"/>
+        <activity android:name="com.tyr.activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"/>
+        <activity android:name="com.tyr.activities.ChatHistoryActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"/>
+        <activity android:name="com.tyr.activities.SearchActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"/>
+        <activity android:name="com.tyr.activities.UserDetailActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"/>
+        <activity android:name="com.tyr.activities.NewsDetailActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"/>
+        <activity android:name="com.tyr.activities.UserEditActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"   
+            android:configChanges="orientation|keyboardHidden"  
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"/>
+
+        <receiver android:name="com.tyr.service.MyBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="action.pull.msg"/>
+            </intent-filter>
+        </receiver>
+        
+        <provider
+            android:name="com.tyr.data.SchoolConnectProvider"
+            android:exported="false"
+            android:authorities="com.tyr.data.SchoolConnectProvider" >
+        </provider>
+        
+        <service android:name="com.tyr.service.MySocketService"/>
+    </application>
+
+</manifest>

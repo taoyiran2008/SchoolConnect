@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Side Menu -->
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:descendantFocusability="blocksDescendants" >
+
+    <!-- 页面主要内容必须放在这个layout下，不然其他ListView是无法接收事件的 -->
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="30dp"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.tyr.ui.view.TopBar
+                android:id="@+id/top_bar"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_title_height"
+                android:background="@color/nice_blue"
+                android:layout_alignParentTop="true" />
+
+            <HorizontalScrollView
+                android:id="@+id/second_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/top_bar"
+                android:background="@color/lightblue"
+                android:fadingEdge="none"
+                android:scrollbars="none" >
+
+                <FrameLayout
+                    android:id="@+id/second_menu_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/image_moving_block"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/bottom_line" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/text_message"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="聊天记录"
+                            android:textColor="@color/gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_contacts"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="通讯录"
+                            android:textColor="@color/gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_common_contacts"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="常用联系人"
+                            android:textColor="@color/gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_schedule"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="课程表"
+                            android:textColor="@color/gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_classroom"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="教室管理"
+                            android:textColor="@color/gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_score"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="成绩管理"
+                            android:textColor="@color/gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_news"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="新闻"
+                            android:textColor="@color/gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        
+                        <TextView
+                            android:id="@+id/text_meeting"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="会议"
+                            android:textColor="@color/gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_notice"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="通知"
+                            android:textColor="@color/gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_utility"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="工具"
+                            android:textColor="@color/gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_b2c"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="在线商城"
+                            android:textColor="@color/gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </FrameLayout>
+            </HorizontalScrollView>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/main_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/first_menu"
+                android:layout_below="@id/second_menu" />
+
+            <!-- 功能条 -->
+
+            <LinearLayout
+                android:id="@+id/first_menu"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bottom_bar_bg"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                android:visibility="visible" >
+
+                <LinearLayout
+                    android:id="@+id/text_im_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/nice_blue"
+                    android:orientation="horizontal"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/text_im"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="通讯"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_im_num"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-10dp"
+                        android:background="@drawable/num_circle"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone"
+                        android:textSize="15sp" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/text_teaching_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/nice_blue"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/text_teaching"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="教学"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_teaching_num"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-10dp"
+                        android:background="@drawable/num_circle"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone"
+                        android:textSize="15sp" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/text_school_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/nice_blue"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/text_school"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="学校"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_school_num"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-10dp"
+                        android:background="@drawable/num_circle"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone"
+                        android:textSize="15sp" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/text_life_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/nice_blue"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/text_life"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="生活服务"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_life_num"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-10dp"
+                        android:background="@drawable/num_circle"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="@color/nice_blue"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+
+    <ListView
+        android:id="@+id/right_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:background="@color/nice_blue"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+
+</android.support.v4.widget.DrawerLayout>

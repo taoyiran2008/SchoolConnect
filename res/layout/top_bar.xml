@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dip"
+    android:background="@color/nice_blue">
+
+    <Button
+        android:id="@+id/btn_left"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/back_button_bg" />
+
+    <TextView
+        android:id="@+id/text_topbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="标题栏"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+        <Button
+        android:id="@+id/btn_right"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/user_button" />
+</RelativeLayout>

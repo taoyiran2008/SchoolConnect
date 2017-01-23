@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="common_button_style">
+        <item name="android:layout_width">@dimen/common_button_width</item>
+        <item name="android:layout_height">@dimen/common_button_height</item>
+        <item name="android:background">@drawable/common_button_bg</item>
+        <item name="android:textSize">@dimen/common_button_textsize</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="common_dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@null</item>
+    </style>
+
+</resources>

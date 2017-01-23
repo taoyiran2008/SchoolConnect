@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.tyr.ui.view.TopBar
+                android:id="@+id/top_bar"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_title_height"
+                android:layout_alignParentTop="true" />
+
+            <com.tyr.ui.view.ChatListView
+                android:id="@+id/chat_history_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/chat_bar"
+                android:layout_below="@id/top_bar"
+                android:cacheColorHint="#00000000"
+                android:divider="@null"
+                android:dividerHeight="1dp"
+                android:drawingCacheQuality="auto" />
+
+            <TextView
+                android:id="@+id/text_no_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="没有聊天记录"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:visibility="visible" />
+
+            <!-- 聊天输入框 -->
+
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/chat_bar"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentBottom="true"
+                android:background="@color/nice_blue" >
+
+                <EditText
+                    android:id="@+id/text_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:background="@color/white"
+                    android:layout_marginLeft="10dp"
+                    android:ems="10"
+                    android:maxLines="2"
+                    android:hint="请输入内容"
+                    android:paddingLeft="10dp" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/btn_emoji"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBaseline="@+id/text_content"
+                    android:layout_toLeftOf="@+id/btn_send"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/emoji_button" />
+                <Button
+                    android:id="@+id/btn_send"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBaseline="@+id/text_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/send_button" />
+            </RelativeLayout>
+
+</RelativeLayout>

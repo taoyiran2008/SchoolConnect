@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_phone"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="拨打电话"/>
+    <item
+        android:id="@+id/menu_sms"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="发送短信"/>
+
+</menu>
