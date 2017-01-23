@@ -1,5 +1,5 @@
 # SchoolConnect
-A social app resembles Wechat, features listed as below:
+A social android app resembles Wechat, features listed as below:
 
 1) Support management of friends list
 2) Instant message which supports multi-user chat 
